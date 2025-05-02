@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Barista Coffee Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-card">
+
+    <!-- 第 1 部分：Choose Your Bean -->
+    <section id="choose-bean" class="section-block">
+      <h1>Choose Your Bean</h1>
+      <div class="bean-grid" id="bean-grid">
+        <button class="bean-card" data-bean="Ethiopia Yirgacheffe">
+          <img src="images/yirgacheffe.png" alt="Ethiopia Yirgacheffe">
+          <h2>Yirgacheffe</h2>
+          <p>Floral · Citrus · Tea-like</p>
+        </button>
+        <button class="bean-card" data-bean="Colombia Supremo">
+          <img src="images/supremo.png" alt="Colombia Supremo">
+          <h2>Supremo</h2>
+          <p>Chocolate · Nutty · Smooth</p>
+        </button>
+        <button class="bean-card" data-bean="Kenya AA">
+          <img src="images/kenya.png" alt="Kenya AA">
+          <h2>Kenya AA</h2>
+          <p>Bright Acidity · Berry</p>
+        </button>
+        <button class="bean-card" data-bean="Brazil Santos">
+          <img src="images/santos.png" alt="Brazil Santos">
+          <h2>Santos</h2>
+          <p>Low Acidity · Caramel</p>
+        </button>
+        <button class="bean-card" data-bean="Guatemala Antigua">
+          <img src="images/antigua.png" alt="Guatemala Antigua">
+          <h2>Antigua</h2>
+          <p>Cocoa · Smoky · Full</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- 第 2 部分：Brew Your Bean -->
+    <section id="brew-settings" class="section-block hidden">
+      <h1>Brew Your Bean</h1>
+      <div class="form-inline">
+        <div class="form-group">
+          <label for="bean-grams">Weight (g)</label>
+          <div class="stepper-horizontal">
+            <button type="button" id="gram-decrease" class="step-btn">−</button>
+            <input type="number" id="bean-grams" min="1" value="18">
+            <button type="button" id="gram-increase" class="step-btn">＋</button>
+          </div>
+        </div>
+        <div class="form-group ratio-group">
+          <label for="ratio">Ratio</label>
+          <select id="ratio">
+            <option value="15">1 : 15</option>
+            <option value="16">1 : 16</option>
+            <option value="17">1 : 17</option>
+          </select>
+        </div>
+      </div>
+      <p class="water-amount">Water: <span id="water-ml">0</span> ml</p>
+      <div class="button-row">
+        <button id="back-btn">← Back</button>
+        <button id="brew-btn" disabled>Start Brewing</button>
+      </div>
+    </section>
+
+    <!-- 第 3 部分：纯视频演示 -->
+    <section id="video-section" class="section-block hidden">
+      <div class="video-wrapper" id="video-wrapper">
+        <video id="brew-video" src="barista.mp4" preload="metadata" style="width:100%; display:block;"></video>
+      </div>
+      <button id="another-btn" class="again-btn hidden">Get Another Cup</button>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
